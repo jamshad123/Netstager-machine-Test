@@ -1,13 +1,187 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "poppins";
+  background-color: rgb(195, 241, 12);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+  box-sizing: border-box;
 }
+
+/* .todo{
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto;
+  max-width: 350px;
+  border-radius: 7%;
+  min-height: 400px;
+  padding: 20px;
+  background-color: white;
+  color: rgb(10, 18, 9); */
+
+/* } */
+
+.todo-item{
+  display: flex;
+  justify-content: flex-start;
+  
+}
+
+.ml-1{
+  margin-left: 15px;
+  margin-top: 13px;
+}
+
+.form{
+  display: flex;
+  width: 100%;
+  margin: 20px auto;
+  justify-content: space-between;
+  border-radius: 8px;
+}
+
+.button{
+  border-radius: 10px;
+  background-color:black;
+  color: aliceblue;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+
+.button:disabled {
+  pointer-events: none;
+}
+
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.test {
+  margin: 50px auto;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+td:first-child {
+  width: 50px;
+}
+
+td:last-child {
+  text-align: center;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.heading{
+  margin-left: 150px;
+}
+
+.button-1{
+  border-radius: 10px;
+  font-size: 14px;
+  background-color:black;
+  color: aliceblue;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+
+.button-1:disabled {
+  pointer-events: none;
+}
+
+.button-1:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-1:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+ .delete{
+  border-radius: 6px;
+  font-size: 14px;
+ }
+
+ .button-2{
+  border-radius: 10px;
+  font-size: 14px;
+  width: 100%;
+  background-color:rgb(28, 244, 100);
+  color: rgb(3, 10, 16);
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+
+.button-2:disabled {
+  pointer-events: none;
+}
+
+.button-2:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-2:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+ .detail{
+  background-color: #e19f9f;
+  margin-top: 500x;
+  justify-content: center !important;
+  align-items: center;
+  width: 1400px;
+  border: 10px solid rgb(5, 12, 5);
+  padding: 50px;
+  margin: 50px;
+ }
+
