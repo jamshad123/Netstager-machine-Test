@@ -12,8 +12,8 @@ import { Table } from 'react-bootstrap'
 
 function TodoList() {
   const {array,setarray}=useContext(newcontext);
-    const [todos, setTodos] = useState([]);
-    const [showCompleted, setShowCompleted] = useState(false);
+  const [todos, setTodos] = useState([]);
+  const [filterCompleted, setFilterCompleted] = useState(false);
     
 
     useEffect(() => {
@@ -35,28 +35,25 @@ function TodoList() {
     axios
       .delete(`https://jsonplaceholder.cypress.io/todos/${id}`)
       .then((res) => setTodos(res.data))
-      alert("deleted");
+      alert("Are you sure to delete");
       setTimeout(() => {
         window.location.reload(false);
       }, 4000);
     
   };
-  // const handleCheckboxChange = () => {
-  //   setShowCompleted(!showCompleted);
-  // };
-//   const filteredTodos = showCompleted ? todos : todos.filter(todo => !todo.completed);
+  const handleFilterChange = event => {
+    setFilterCompleted(event.target.checked);
+  };
+
+  const filteredTodos = filterCompleted ? todos.filter(todo => todo.completed) : todos;
 
     
   return (
     <div className='test'>
          <h1 className='heading'><b>Todo List</b></h1>
          <label>
-        Show Completed Todos
-        <input
-          type="checkbox"
-          checked={showCompleted}
-          onChange={event => setShowCompleted(event.target.checked)}
-        />
+        <input type="checkbox" checked={filterCompleted} onChange={handleFilterChange} />
+        Filter completed todos
       </label>
       <Table>
         <thead>
@@ -72,8 +69,8 @@ function TodoList() {
               <td>{todo.id}</td>
               <td>{todo.title}</td>
               <td>{todo.completed ? 'Yes' : 'No'}</td>
-              <td><button className='delete'onClick={() => Delete(todo.id)}><MdDeleteForever/></button></td>
-              <td><button className='delete'><GiRoyalLove/></button></td>
+              <td><button className='delete' onClick={() => Delete(todo.id)}><MdDeleteForever/></button></td>
+              <td><Link to={"/wishlist"}><button className='wishlist'><GiRoyalLove/></button></Link></td>
               <td><Link to={`/details/${todo.id}`}><button className='button-1'>Show Details</button></Link></td>
             </tr>
           ))}

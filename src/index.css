@@ -185,3 +185,7 @@ td:last-child {
   margin: 50px;
  }
 
+ .wishlist{
+  border-radius: 6px;
+  font-size: 14px;
+ }

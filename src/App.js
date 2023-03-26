@@ -5,6 +5,8 @@ import { useState } from 'react';
 import Details from './components/Details';
 import { createContext } from 'react';
 import AddTodo from './components/AddTodo';
+import WishList from './components/Wishlist';
+import NavbarMain from './components/NavbarMain';
 
 const newcontext = createContext();
 function App() {
@@ -14,11 +16,12 @@ function App() {
     <div className="todo">
      <newcontext.Provider value={{array, setarray}}>
       <BrowserRouter>
-
+        <NavbarMain/>
         <Routes>
-        <Route path="/" element={<TodoList/>}/>
+         <Route path="/" element={<TodoList/>}/>
           <Route path="/addTodo" element={<AddTodo/>}/>
           <Route path="/details/:id" element={<Details/>}/>
+          <Route path="/wishlist" element={<WishList/>}/>
         </Routes>
       </BrowserRouter>
       </newcontext.Provider>
