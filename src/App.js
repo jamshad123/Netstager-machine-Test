@@ -1,35 +1,27 @@
-import TodoList from './components/TodoList';
-import './App.css';
+import React from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
-import Details from './components/Details';
-import { createContext } from 'react';
-import AddTodo from './components/AddTodo';
-import WishList from './components/Wishlist';
-import NavbarMain from './components/NavbarMain';
+import ProductListing from "./components/ProductListing";
+import Header from "./components/Header";
+import "./App.css";
+import ProductDetails from "./components/ProductDetails";
+import ProductPage from "./components/ProductListing";
 
-const newcontext = createContext();
 function App() {
-
-  const [array, setarray] = useState([])
   return (
-    <div className="todo">
-     <newcontext.Provider value={{array, setarray}}>
+    <div className="App">
       <BrowserRouter>
-        <NavbarMain/>
-        <Routes>
-         <Route path="/" element={<TodoList/>}/>
-          <Route path="/addTodo" element={<AddTodo/>}/>
-          <Route path="/details/:id" element={<Details/>}/>
-          <Route path="/wishlist" element={<WishList/>}/>
-        </Routes>
-      </BrowserRouter>
-      </newcontext.Provider>
+      <Header/>
+<Routes>
+  
+  <Route path="/" element={<ProductListing/>}/>
+  <Route path="/product/:productId" element={<ProductDetails/>} />
+  <Route>404 Not Found!</Route>
 
+</Routes>
+</BrowserRouter>
       
     </div>
   );
 }
 
 export default App;
-export {newcontext}
